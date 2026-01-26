@@ -176,7 +176,7 @@ public sealed class X11SelectionHandler : IObservable<string>, IDisposable
         _pendingContents = null;
         _dirtyFlag = false;
 
-        if (text != null)
+        if (!string.IsNullOrEmpty(text))
         {
             _subject.OnNext(text);
         }
